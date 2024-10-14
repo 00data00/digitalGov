@@ -88,8 +88,8 @@ st.table(month_data[['Date', 'Total_Transactions']])
 for _, row in month_data.iterrows():
     day_str = pd.to_datetime(row['Date']).strftime("%-d-%b")
     with st.expander(f"Details for {day_str}"):
-        if pd.notna(row['الحجز المسبق']):
-            st.write(f"**PreBooking:** {row['PreBooking']}")
+        if pd.notna(row['PreBooking']):
+            st.write(f"**االحجز :** {row['PreBooking']}")
             st.write(f"**استعلام محرر:** {row['StatusCheck']}")
             st.write(f"**مسبقة الدفع:** {row['PaidTransactions']}")
             st.write(f"**استعلات معلاتي:** {row['PrepaidTransactions']}")
