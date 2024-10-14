@@ -89,10 +89,10 @@ for _, row in month_data.iterrows():
     day_str = pd.to_datetime(row['Date']).strftime("%-d-%b")
     with st.expander(f"Details for {day_str}"):
         if pd.notna(row['PreBooking']):
-            st.write(f"** االحجز المسبق:** {row['PreBooking']}")
+            st.write(f"**االحجز المسبق:** {row['PreBooking']}")
             st.write(f"**استعلام سريان محرر:** {row['StatusCheck']}")
-            st.write(f"*معاملاتي المدفوعة:** {row['PaidTransactions']}")
-            st.write(f"** معاملات مسبقة الدفع المدفوعة:** {row['PrepaidTransactions']}")
-            st.write(f"**  اكتب محررك المدفوعة:** {row['WriteYourDoc']}")
+            st.write(f"**معاملاتي المدفوعة:** {row['PaidTransactions']}")
+            st.write(f"**معاملات مسبقة الدفع المدفوعة:** {row['PrepaidTransactions']}")
+            st.write(f"**اكتب محررك المدفوعة:** {row['WriteYourDoc']}")
         else:
             st.write(f"No detailed transaction data available for {day_str}.")
